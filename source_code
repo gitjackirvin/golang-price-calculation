@@ -1,0 +1,33 @@
+package main
+import "fmt"
+
+func main() {
+	// Declarations
+	var price float64
+	var quantity int
+
+	// 1. Price input and quantity input
+	fmt.Print("Enter the price of the item: $")
+	fmt.Scanln(&price)
+	fmt.Print("Enter the number of items: $")
+	fmt.Scanln(&quantity)
+	fmt.Println()
+
+	// 2. Subtotal Calculation
+	subtotal := float64(quantity) * price
+
+	// 3. Salestax Calculation
+	salesTax := subtotal * 0.07
+
+	// 4. Total price Calculation
+	totalSale := subtotal + salesTax
+
+	fmt.Printf("%-12s$%9.2f\n", "Price", price)
+	fmt.Printf("%-12s %9d\n", "Quantity", quantity)
+	fmt.Printf("%-12s$%9.2f\n", "Subtotal", subtotal)
+	fmt.Printf("%-12s$%9.2f\n", "Sales tax", salesTax)
+	
+	fmt.Println("----------------------")
+	
+	fmt.Printf("%-12s$%9.2f\n", "Total Sale", totalSale)
+}
